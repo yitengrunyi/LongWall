@@ -54,7 +54,7 @@ class _PostRunProcessorStub:
 
 @pytest.mark.asyncio
 async def test_delete_removes_all_conversation_private_data(tmp_path) -> None:
-    database = tmp_path / "vesta.db"
+    database = tmp_path / "longwall.db"
     workspace = tmp_path / "workspace"
     workspace.mkdir()
     tasks_dir = tmp_path / "tasks"
@@ -285,7 +285,7 @@ async def test_delete_removes_all_conversation_private_data(tmp_path) -> None:
 
 @pytest.mark.asyncio
 async def test_delete_missing_conversation_is_noop(tmp_path) -> None:
-    database = tmp_path / "vesta.db"
+    database = tmp_path / "longwall.db"
     conversations = SQLiteConversationStore(database)
     await conversations.initialize()
 

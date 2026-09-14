@@ -31,7 +31,7 @@ const STARTERS: ReadonlyArray<{
   },
   {
     title: '安排自动化',
-    description: '把重复工作交给 Vesta 按时执行',
+    description: '把重复工作交给 LongWall 按时执行',
     prompt: EXAMPLE_PROMPTS[2],
     icon: 'automations',
   },
@@ -54,7 +54,7 @@ export default function ChatEmptyState({
         <span className="chat-empty__mark">V</span>
         <span>新的工作空间</span>
       </div>
-      <h1>今天想让 Vesta 帮你完成什么？</h1>
+      <h1>今天想让 LongWall 帮你完成什么？</h1>
       <p className="chat-empty__intro">
         直接描述你想要的结果。执行过程会实时展示，需要授权的操作会先征求你的确认。
       </p>

@@ -1,6 +1,6 @@
-"""Application：Vesta 的 composition root（统一依赖装配）。
+"""Application：LongWall 的 composition root（统一依赖装配）。
 
-CLI（``app.models.chat``）与 Vesta Host（``app.server``）共用这一份
+CLI（``app.models.chat``）与 LongWall Host（``app.server``）共用这一份
 “初始化并持有全部运行依赖”的逻辑，避免各自复制一套 wiring。
 
 生命周期：
@@ -134,7 +134,7 @@ from app.tools import (
 from app.tools.builtin._workspace import workspace_root_path
 from app.trace import SQLiteTraceStore
 
-logger = logging.getLogger("vesta.application")
+logger = logging.getLogger("longwall.application")
 
 # 默认按需暴露的工具（不进入模型 schema，需 tool_search 搜索后激活）。
 _DEFERRED_TOOL_NAMES = frozenset(
@@ -145,7 +145,7 @@ _DEFERRED_TOOL_NAMES = frozenset(
 )
 
 DEFAULT_SYSTEM_PROMPT = (
-    "你是 Vesta，一个本地运行的智能助理。请使用用户的语言回答。"
+    "你是 LongWall，一个本地运行的智能助理。请使用用户的语言回答。"
     "调用工具时优先使用已有结果；网页搜索通常只需一到两次，获得可用结果后"
     "立即整理回答，不要为了追求完美而反复改写相同查询。"
     "只有用户目标确实依赖实时或外部信息、或者需要操作本地环境时才调用工具；"
@@ -216,7 +216,7 @@ def _mark_deferred_tools(
 
 
 class Application:
-    """统一创建并持有 Vesta 的全部运行依赖。"""
+    """统一创建并持有 LongWall 的全部运行依赖。"""
 
     def __init__(
         self,

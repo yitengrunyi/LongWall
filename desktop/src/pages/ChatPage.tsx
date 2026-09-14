@@ -545,7 +545,7 @@ export default function ChatPage({
               <section className="no-conversation">
                 <div className="chat-empty__mark">V</div>
                 <h1>开始一项新工作</h1>
-                <p>创建会话，然后告诉 Vesta 你希望完成的结果。</p>
+                <p>创建会话，然后告诉 LongWall 你希望完成的结果。</p>
                 <button
                   type="button"
                   className="btn btn-primary"

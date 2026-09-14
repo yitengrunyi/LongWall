@@ -26,7 +26,7 @@ from uuid import uuid4
 
 from .models import ActiveApp, Observation, Window
 
-logger = logging.getLogger("vesta.computer.session")
+logger = logging.getLogger("longwall.computer.session")
 
 
 class ComputerSessionError(RuntimeError):

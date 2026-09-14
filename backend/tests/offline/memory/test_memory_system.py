@@ -191,7 +191,7 @@ async def test_core_initialize_atomically_migrates_legacy_format(
     await CoreMemoryManager(memory_root).initialize()
 
     migrated = path.read_text(encoding="utf-8")
-    assert migrated == legacy.replace("oneagent-core-v1", "vesta-core-v1", 1)
+    assert migrated == legacy.replace("oneagent-core-v1", "longwall-core-v1", 1)
     assert "updated_at: '2026-08-12T07:00:58+00:00'" in migrated
     assert "imported_from: oneAgent" in migrated
     assert "人工维护的长期约束" in migrated
@@ -227,7 +227,7 @@ async def test_core_mutations_work_after_legacy_migration(
     assert added_created is True
     assert added.key == "safety.confirmation"
     assert removed.key == "communication.language"
-    assert raw.count("format: vesta-core-v1") == 1
+    assert raw.count("format: longwall-core-v1") == 1
     assert "oneagent-core-v1" not in raw
     assert raw.count("---") == 2
     assert "人工维护的长期约束" in visible

@@ -35,7 +35,7 @@ describe('artifact api', () => {
     const url = buildArtifactDownloadUrl(id)
     expect(url).toBe(`${SERVER_URL}/artifacts/${id}/content`)
     expect(url).not.toContain('/Users/')
-    expect(url).not.toContain('.vesta')
+    expect(url).not.toContain('.longwall')
     expect(url).not.toContain('file://')
   })
 })

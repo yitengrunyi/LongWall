@@ -9,7 +9,7 @@ from pathlib import Path
 from .models import StoredModelSettings
 
 DEFAULT_MODEL_SETTINGS_PATH = (
-    Path(__file__).resolve().parents[2] / ".vesta" / "settings" / "models.json"
+    Path(__file__).resolve().parents[2] / ".longwall" / "settings" / "models.json"
 )
 
 

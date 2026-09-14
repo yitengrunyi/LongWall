@@ -21,10 +21,10 @@ from pydantic import BaseModel, ConfigDict, field_validator
 
 from app.context.tokens import default_token_estimator
 
-logger = logging.getLogger("vesta.memory.core")
+logger = logging.getLogger("longwall.memory.core")
 
 DEFAULT_MAX_CORE_TOKENS = 2_000
-_CORE_FORMAT = "vesta-core-v1"
+_CORE_FORMAT = "longwall-core-v1"
 _LEGACY_CORE_FORMAT = "oneagent-core-v1"
 _SUPPORTED_CORE_FORMATS = frozenset({_CORE_FORMAT, _LEGACY_CORE_FORMAT})
 _CORE_HEADING = "# Core Memory"

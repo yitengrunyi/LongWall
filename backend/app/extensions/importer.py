@@ -213,7 +213,7 @@ async def apply_import_plan(
         discovered = _skill_packages_from_archive(archive)
         if not discovered:
             raise ExtensionImportError(
-                f"{source.slug} 中没有找到可由 Vesta 加载的 SKILL.md"
+                f"{source.slug} 中没有找到可由 LongWall 加载的 SKILL.md"
             )
         packages.extend((source, package) for package in discovered)
 
@@ -373,7 +373,7 @@ def _fingerprint(raw: str, scope: SkillScope, permission: str) -> str:
 
 async def _download_github_archive(source: GitHubSkillSource) -> bytes:
     url = f"https://api.github.com/repos/{source.slug}/zipball"
-    headers = {"Accept": "application/vnd.github+json", "User-Agent": "Vesta"}
+    headers = {"Accept": "application/vnd.github+json", "User-Agent": "LongWall"}
     try:
         async with httpx.AsyncClient(
             follow_redirects=True,

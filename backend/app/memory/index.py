@@ -17,7 +17,7 @@ from pathlib import Path
 
 from .models import MemoryRecord
 
-logger = logging.getLogger("vesta.memory.index")
+logger = logging.getLogger("longwall.memory.index")
 
 _INDEX_HEADER = (
     "# Long-term Memory Index\n\n"

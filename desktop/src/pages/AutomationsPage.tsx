@@ -86,7 +86,7 @@ export default function AutomationsPage(): React.JSX.Element {
   return (
     <PageShell
       title="自动化"
-      subtitle="查看并管理 Vesta 根据你的要求创建的定时工作。"
+      subtitle="查看并管理 LongWall 根据你的要求创建的定时工作。"
     >
       {automationsQuery.isPending ? (
         <LoadingState label="正在加载自动化…" />
@@ -98,7 +98,7 @@ export default function AutomationsPage(): React.JSX.Element {
       ) : automations.length === 0 ? (
         <EmptyState
           title="暂无自动化"
-          hint="在对话中告诉 Vesta 需要何时执行什么工作，创建后会显示在这里。"
+          hint="在对话中告诉 LongWall 需要何时执行什么工作，创建后会显示在这里。"
           icon="automations"
         />
       ) : (

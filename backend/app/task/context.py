@@ -9,7 +9,7 @@ from app.models.types import Message, MessageRole
 from .models import Task, TaskStatus, TaskStep, TaskStepStatus
 from .store import FileTaskStore
 
-TASK_CONTEXT_MESSAGE_NAME = "vesta_active_task"
+TASK_CONTEXT_MESSAGE_NAME = "longwall_active_task"
 
 
 class TaskContextProvider:

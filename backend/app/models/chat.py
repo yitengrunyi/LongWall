@@ -127,7 +127,7 @@ async def _send_message(
     content: str,
     model: str,
 ) -> tuple[bool, Conversation]:
-    print("Vesta 正在思考...", flush=True)
+    print("LongWall 正在思考...", flush=True)
 
     try:
         dispatch = await conversation_service.dispatch(
@@ -138,7 +138,7 @@ async def _send_message(
         )
     except KeyboardInterrupt:
         # 用户 Ctrl+C：ConversationService 已尽力 cancel 当前 Run，
-        # 回到输入循环，不退出 Vesta。
+        # 回到输入循环，不退出 LongWall。
         print("\n[cancel] 已取消当前 Run。")
         return False, conversation
 
@@ -151,7 +151,7 @@ async def _send_message(
             title_from_content(content),
         )
     answer = result.content or "<模型未返回文本>"
-    print(f"\nVesta> {answer.strip()}")
+    print(f"\nLongWall> {answer.strip()}")
     stop_reason = dispatch.run.stop_reason or result.stop_reason.value
     provider_name = provider.value if isinstance(provider, ModelProvider) else provider
     print(
@@ -1089,7 +1089,7 @@ async def _run(
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="python -m app",
-        description="启动 Vesta CLI，或完成首次模型设置。",
+        description="启动 LongWall CLI，或完成首次模型设置。",
     )
     parser.add_argument(
         "-p",

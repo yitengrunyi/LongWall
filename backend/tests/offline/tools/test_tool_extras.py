@@ -57,14 +57,14 @@ async def test_shell_command_runs_and_captures_output(tmp_path) -> None:
         ToolCall(
             id="sh-1",
             name="run_shell_command",
-            arguments={"command": "echo hello vesta"},
+            arguments={"command": "echo hello longwall"},
         )
     )
 
     assert result.success is True
     output = json.loads(result.output or "{}")
     assert output["exit_code"] == 0
-    assert "hello vesta" in output["stdout"]
+    assert "hello longwall" in output["stdout"]
 
 
 @pytest.mark.asyncio
@@ -123,7 +123,7 @@ async def test_http_request_get_returns_body() -> None:
     transport = httpx.MockTransport(
         lambda request: httpx.Response(
             200,
-            text="<html>vesta</html>",
+            text="<html>longwall</html>",
             headers={"content-type": "text/html; charset=utf-8"},
         )
     )
@@ -141,7 +141,7 @@ async def test_http_request_get_returns_body() -> None:
     assert result.success is True
     output = json.loads(result.output or "{}")
     assert output["status_code"] == 200
-    assert "vesta" in output["text"]
+    assert "longwall" in output["text"]
 
 
 @pytest.mark.asyncio

@@ -9,7 +9,7 @@ import { ComputerSessionOverview } from './ComputerPage'
 const context: ComputerContextVM = {
   target: 'TextEdit',
   window: 'Untitled',
-  lastAction: '已输入“ Vesta”',
+  lastAction: '已输入“ LongWall”',
   verification: '已验证',
   executionMode: 'background ax',
   recentActions: [],
@@ -30,7 +30,7 @@ describe('ComputerSessionOverview', () => {
     expect(html).toContain('TextEdit')
     expect(html).toContain('Untitled')
     expect(html).toContain('Append text in TextEdit')
-    expect(html).toContain('已输入“ Vesta”')
+    expect(html).toContain('已输入“ LongWall”')
     expect(html).toContain('已验证')
   })
 

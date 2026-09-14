@@ -166,7 +166,7 @@ export function ApprovalFloatingCard({
       <header className="floating-approval__bar">
         <span className="floating-approval__brand">
           <span className="floating-approval__dot" aria-hidden="true" />
-          Vesta
+          LongWall
         </span>
         {queuedCount > 1 ? (
           <span className="floating-approval__waiting">
@@ -251,17 +251,17 @@ export function floatingApprovalPresentation(
     case 'submitting':
       return { eyebrow: '正在提交', title: actionLabel, description: '正在发送你的选择，请稍候。', status: '提交确认中', tone: 'working' }
     case 'executing':
-      return { eyebrow: '已允许', title: actionLabel, description: 'Vesta 正在执行你刚刚允许的电脑操作。', status: '正在执行', tone: 'working' }
+      return { eyebrow: '已允许', title: actionLabel, description: 'LongWall 正在执行你刚刚允许的电脑操作。', status: '正在执行', tone: 'working' }
     case 'action_delivered':
-      return { eyebrow: '操作已发送', title: actionLabel, description: '操作事件已经发送，Vesta 正在确认界面是否真的发生变化。', status: '正在检查结果', tone: 'working' }
+      return { eyebrow: '操作已发送', title: actionLabel, description: '操作事件已经发送，LongWall 正在确认界面是否真的发生变化。', status: '正在检查结果', tone: 'working' }
     case 'action_failed':
-      return { eyebrow: '操作未完成', title: actionLabel, description: friendlyFloatingError(error, '这次电脑操作没有完成。'), status: 'Vesta 正在判断是否可以恢复', tone: 'danger' }
+      return { eyebrow: '操作未完成', title: actionLabel, description: friendlyFloatingError(error, '这次电脑操作没有完成。'), status: 'LongWall 正在判断是否可以恢复', tone: 'danger' }
     case 'continuing':
-      return { eyebrow: '继续执行', title: 'Vesta 正在继续任务', description: '刚才允许的操作已经结束，Vesta 正在处理下一步。', status: '任务执行中', tone: 'working' }
+      return { eyebrow: '继续执行', title: 'LongWall 正在继续任务', description: '刚才允许的操作已经结束，LongWall 正在处理下一步。', status: '任务执行中', tone: 'working' }
     case 'run_completed':
-      return { eyebrow: '任务完成', title: '本轮执行已完成', description: 'Vesta 已经完成这次任务。', status: '已完成', tone: 'success' }
+      return { eyebrow: '任务完成', title: '本轮执行已完成', description: 'LongWall 已经完成这次任务。', status: '已完成', tone: 'success' }
     case 'run_failed':
-      return { eyebrow: '执行已停止', title: '本轮未能完成', description: friendlyFloatingError(error, 'Vesta 无法继续本轮任务，你可以返回会话查看详情。'), status: '需要你的关注', tone: 'danger' }
+      return { eyebrow: '执行已停止', title: '本轮未能完成', description: friendlyFloatingError(error, 'LongWall 无法继续本轮任务，你可以返回会话查看详情。'), status: '需要你的关注', tone: 'danger' }
     case 'denied':
       return { eyebrow: '已拒绝', title: actionLabel, description: '这项电脑操作没有执行。', status: '操作已取消', tone: 'neutral' }
     case 'rpc_error':
@@ -278,7 +278,7 @@ function friendlyFloatingError(
   if (!error) return fallback
   const normalized = error.toLowerCase()
   if (normalized.includes('maximum step') || normalized.includes('max_steps')) {
-    return '执行步骤已达到上限。你可以返回会话，让 Vesta 从现有结果继续。'
+    return '执行步骤已达到上限。你可以返回会话，让 LongWall 从现有结果继续。'
   }
   if (normalized.includes('stale_observation') || normalized.includes('fresh observation')) {
     return '电脑画面已经变化。为了避免误操作，本次动作已安全停止。'

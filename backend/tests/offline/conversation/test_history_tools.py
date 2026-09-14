@@ -10,7 +10,7 @@ from app.tools import ToolExecutionContext
 
 @pytest.mark.asyncio
 async def test_history_search_and_read_use_raw_current_conversation(tmp_path) -> None:
-    store = SQLiteConversationStore(tmp_path / "vesta.db")
+    store = SQLiteConversationStore(tmp_path / "longwall.db")
     await store.initialize()
     first = await store.create(
         messages=(
@@ -44,7 +44,7 @@ async def test_history_search_and_read_use_raw_current_conversation(tmp_path) ->
 
 @pytest.mark.asyncio
 async def test_history_tool_rejects_missing_conversation_context(tmp_path) -> None:
-    store = SQLiteConversationStore(tmp_path / "vesta.db")
+    store = SQLiteConversationStore(tmp_path / "longwall.db")
     await store.initialize()
     call = ToolCall(id="history", name="history_search", arguments={})
 

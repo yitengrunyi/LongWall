@@ -756,12 +756,12 @@ func handleTestTypeLogic(params: Any?, id: Any?) {
         "result": [
             "characters": [
                 "empty": characterCount(""),
-                "hello": characterCount("Hello Vesta"),
-                "cn": characterCount("你好 Vesta"),
+                "hello": characterCount("Hello LongWall"),
+                "cn": characterCount("你好 LongWall"),
             ],
             "chunks": [
                 "empty": chunkUTF16("", chunkSize: 100).count,
-                "short": chunkUTF16("Hello Vesta", chunkSize: 100).count,
+                "short": chunkUTF16("Hello LongWall", chunkSize: 100).count,
                 "long_250": chunkUTF16(
                     String(repeating: "a", count: 250), chunkSize: 100
                 ).count,

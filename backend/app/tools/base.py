@@ -1,4 +1,4 @@
-"""Vesta 本地工具的基础接口。"""
+"""LongWall 本地工具的基础接口。"""
 
 from __future__ import annotations
 

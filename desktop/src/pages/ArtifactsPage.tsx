@@ -47,7 +47,7 @@ export function ArtifactsView({
   return (
     <PageShell
       title="交付物"
-      subtitle="查看 Vesta 在各项工作中交付的文件与链接。"
+      subtitle="查看 LongWall 在各项工作中交付的文件与链接。"
       maxWidth={1360}
     >
       <div className="artifacts-page">
@@ -58,7 +58,7 @@ export function ArtifactsView({
         ) : artifacts.length === 0 ? (
           <EmptyState
             title="暂无交付结果"
-            hint="Vesta 创建的文件和链接会显示在这里。"
+            hint="LongWall 创建的文件和链接会显示在这里。"
             icon="artifacts"
           />
         ) : (

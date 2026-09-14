@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-interface VestaDesktopApi {
+interface LongWallDesktopApi {
   platform: string
   versions: {
     electron: string
@@ -20,5 +20,5 @@ interface VestaDesktopApi {
 }
 
 interface Window {
-  vesta?: VestaDesktopApi
+  longwall?: LongWallDesktopApi
 }

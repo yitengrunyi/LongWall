@@ -57,7 +57,7 @@ export class DesktopNotificationController {
     // 原生 Notification，避免同一审批出现双提醒。
     if (data.approval?.tool_name?.startsWith('computer_')) return
     this.deliver(`approval:${id}`, {
-      title: 'Vesta 需要你的确认',
+      title: 'LongWall 需要你的确认',
       body: '有一项敏感操作正在等待你的决定。',
       kind: 'approval',
     })
@@ -78,8 +78,8 @@ export class DesktopNotificationController {
       interrupted: '已中断',
     }
     this.deliver(`run:${data.run_id}:${data.status}`, {
-      title: `Vesta 任务${statusLabel[data.status] ?? '已结束'}`,
-      body: '打开 Vesta 查看本轮结果。',
+      title: `LongWall 任务${statusLabel[data.status] ?? '已结束'}`,
+      body: '打开 LongWall 查看本轮结果。',
       kind: 'run',
     })
   }
@@ -89,8 +89,8 @@ export class DesktopNotificationController {
     const id = data.artifact?.id
     if (!id || !this.isHidden()) return
     this.deliver(`artifact:${id}`, {
-      title: 'Vesta 已生成新的交付物',
-      body: '打开 Vesta 查看交付结果。',
+      title: 'LongWall 已生成新的交付物',
+      body: '打开 LongWall 查看交付结果。',
       kind: 'artifact',
     })
   }
@@ -108,7 +108,7 @@ export class DesktopNotificationController {
 }
 
 export function createDesktopNotificationController(): DesktopNotificationController | null {
-  const bridge = window.vesta
+  const bridge = window.longwall
   if (!bridge) return null
   return new DesktopNotificationController(
     rpcClient,

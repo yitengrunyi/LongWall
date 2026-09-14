@@ -73,7 +73,7 @@ export default function ModelSettingsPanel(): React.JSX.Element {
       queryClient.setQueryData(['model-settings'], data)
       setProviders((items) => items.map((item) => ({ ...item, api_key: undefined })))
       setError(null)
-      setNotice('设置已安全保存。请重启 Vesta Host，让新模型配置生效。')
+      setNotice('设置已安全保存。请重启 LongWall Host，让新模型配置生效。')
     },
     onError: (reason) => {
       setNotice(null)
@@ -97,7 +97,7 @@ export default function ModelSettingsPanel(): React.JSX.Element {
     mutationFn: restartHost,
     onSuccess: () => {
       setError(null)
-      setNotice('Vesta Host 正在安全重启，连接恢复后新配置会自动生效。')
+      setNotice('LongWall Host 正在安全重启，连接恢复后新配置会自动生效。')
     },
     onError: (reason) => {
       setNotice(null)

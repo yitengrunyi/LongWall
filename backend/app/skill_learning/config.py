@@ -9,7 +9,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 _BACKEND_ENV_FILE = Path(__file__).resolve().parents[2] / ".env"
 
-_DEFAULT_DATA_DIR = Path(__file__).resolve().parents[2] / ".vesta" / "skill-learning"
+_DEFAULT_DATA_DIR = Path(__file__).resolve().parents[2] / ".longwall" / "skill-learning"
 
 
 class SkillLearningSettings(BaseSettings):

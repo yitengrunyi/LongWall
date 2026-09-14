@@ -160,7 +160,7 @@ async def service_factory(tmp_path):
     """构造 (ConversationService, stores, stub run manager)。"""
 
     async def build(result: AgentResult, run_status: str = "completed"):
-        database = tmp_path / "vesta.db"
+        database = tmp_path / "longwall.db"
         conversation_store = SQLiteConversationStore(database)
         summary_store = SQLiteConversationSummaryStore(database)
         trace_store = SQLiteTraceStore(database)
@@ -688,7 +688,7 @@ async def test_run_provenance_persisted_across_restart(
     from app.checkpoint import SQLiteCheckpointStore
     from app.run import RunManager
 
-    database = tmp_path / "vesta.db"
+    database = tmp_path / "longwall.db"
     conversation_store = SQLiteConversationStore(database)
     await conversation_store.initialize()
     conversation = await conversation_store.create()

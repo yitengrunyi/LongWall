@@ -22,7 +22,7 @@ describe('Sidebar (App Shell)', () => {
     ]) {
       expect(html).toContain(label)
     }
-    expect(html).toContain('Vesta')
+    expect(html).toContain('LongWall')
   })
 
   it('当前页有 active 状态', () => {

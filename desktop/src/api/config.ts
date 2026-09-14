@@ -1,4 +1,4 @@
-/** Vesta Host 地址与 WebSocket 地址（可通过 VITE_AGENT_SERVER_URL 覆盖）。 */
+/** LongWall Host 地址与 WebSocket 地址（可通过 VITE_AGENT_SERVER_URL 覆盖）。 */
 
 export const SERVER_URL: string =
   (import.meta.env.VITE_AGENT_SERVER_URL as string | undefined) ??

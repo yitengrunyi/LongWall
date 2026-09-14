@@ -410,7 +410,7 @@ async def _build_application(tmp_path, *, computer_runtime):
     application = Application(
         provider="fake",
         model="fake-model",
-        database=tmp_path / "vesta.db",
+        database=tmp_path / "longwall.db",
         tasks_dir=tmp_path / "tasks",
         mcp_config=tmp_path / "mcp.json",
         memory_dir=tmp_path / "memory",

@@ -1,21 +1,21 @@
 <div align="center">
 
-# Vesta
+# LongWall
 
 **Build agents that remember, continue, and learn.**
 
 一个面向长期工作、在本地持续运行的 AI Agent Harness。
 
-[![CI](https://github.com/yitengrunyi/vesta/actions/workflows/ci.yml/badge.svg)](https://github.com/yitengrunyi/vesta/actions/workflows/ci.yml)
+[![CI](https://github.com/yitengrunyi/LongWall/actions/workflows/ci.yml/badge.svg)](https://github.com/yitengrunyi/LongWall/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)
 ![Desktop](https://img.shields.io/badge/Desktop-Electron-47848F?logo=electron&logoColor=white)
 ![Platform](https://img.shields.io/badge/Computer_Runtime-macOS-111111?logo=apple&logoColor=white)
 
-[演示](#demo) · [核心能力](#what-vesta-can-do) · [架构](#how-it-fits-together) · [快速开始](#quick-start) · [评测](#evaluation)
+[演示](#demo) · [核心能力](#what-longwall-can-do) · [架构](#how-it-fits-together) · [快速开始](#quick-start) · [评测](#evaluation)
 
 </div>
 
-Vesta 是一个面向长期工作的本地 AI Agent Harness。它不只完成当前对话，还会管理
+LongWall 是一个面向长期工作的本地 AI Agent Harness。它不只完成当前对话，还会管理
 长上下文、跟踪复杂任务、恢复中断 Run、使用本地与 MCP 工具，并从真实完成的工作中
 逐步形成可复用的记忆与 Skill。
 
@@ -28,21 +28,11 @@ Vesta 是一个面向长期工作的本地 AI Agent Harness。它不只完成当
 
 以下截图来自真实的本地 Run，不是静态概念稿。
 
-### 动态演示
-
-<p align="center">
-  <img src="docs/assets/vesta-demo.gif" width="100%" alt="Vesta 长任务执行动态演示" />
-</p>
-
-<p align="center">
-  Task 跟踪 · 文件工具 · Desktop 操作 · Artifact 交付
-</p>
-
 ### Agent Workspace
 
 <p align="center">
-  <a href="docs/assets/vesta-workspace.png">
-    <img src="docs/assets/vesta-workspace.png" width="100%" alt="Vesta Agent Workspace" />
+  <a href="docs/assets/longwall-workspace.png">
+    <img src="docs/assets/longwall-workspace.png" width="100%" alt="LongWall Agent Workspace" />
   </a>
 </p>
 
@@ -51,8 +41,8 @@ Vesta 是一个面向长期工作的本地 AI Agent Harness。它不只完成当
 ### Long-Running Work
 
 <p align="center">
-  <a href="docs/assets/vesta-task-run.png">
-    <img src="docs/assets/vesta-task-run.png" width="100%" alt="Vesta Task progress and Run panel" />
+  <a href="docs/assets/longwall-task-run.png">
+    <img src="docs/assets/longwall-task-run.png" width="100%" alt="LongWall Task progress and Run panel" />
   </a>
 </p>
 
@@ -64,8 +54,8 @@ Vesta 是一个面向长期工作的本地 AI Agent Harness。它不只完成当
 #### Run Detail & Trace
 
 <p align="center">
-  <a href="docs/assets/vesta-run-detail.png">
-    <img src="docs/assets/vesta-run-detail.png" width="100%" alt="Vesta Run Detail and Trace" />
+  <a href="docs/assets/longwall-run-detail.png">
+    <img src="docs/assets/longwall-run-detail.png" width="100%" alt="LongWall Run Detail and Trace" />
   </a>
 </p>
 
@@ -74,8 +64,8 @@ Vesta 是一个面向长期工作的本地 AI Agent Harness。它不只完成当
 #### Long-Term Memory
 
 <p align="center">
-  <a href="docs/assets/vesta-memory.png">
-    <img src="docs/assets/vesta-memory.png" width="100%" alt="Vesta Long-Term Memory" />
+  <a href="docs/assets/longwall-memory.png">
+    <img src="docs/assets/longwall-memory.png" width="100%" alt="LongWall Long-Term Memory" />
   </a>
 </p>
 
@@ -83,7 +73,7 @@ Core Memory 随 Run 进入上下文，Ordinary Memory 只提供索引，由模�
 
 </details>
 
-## What Vesta Can Do
+## What LongWall Can Do
 
 - **Multi-Provider Models** — 统一适配 OpenAI、Qwen、DeepSeek 和 Anthropic API。
 - **Tool System** — 本地文件、Shell、网页搜索、时间等工具共享注册、超时、权限和审计边界；Shell 默认在 workspace 沙箱中执行。
@@ -131,7 +121,7 @@ Desktop
   ↓
 WS /rpc (JSON-RPC)
   ↓
-Vesta Host
+LongWall Host
   ↓
 ConversationService / RunManager / AgentRuntime
 ```
@@ -165,8 +155,8 @@ ConversationService / RunManager / AgentRuntime
 ### 1. Clone and install Backend
 
 ```bash
-git clone https://github.com/yitengrunyi/vesta.git
-cd vesta
+git clone https://github.com/yitengrunyi/LongWall.git
+cd LongWall
 
 python -m venv backend/.venv
 backend/.venv/bin/python -m pip install -r backend/requirements.txt
@@ -174,7 +164,7 @@ cp backend/.env.example backend/.env
 ```
 
 首次使用可以通过 CLI 设置主模型。macOS 上 API Key 会保存到系统 Keychain，模型名称与
-API 地址等非敏感配置保存在本地 `.vesta` 目录；也可以继续使用 `backend/.env` 配置。
+API 地址等非敏感配置保存在本地 `.longwall` 目录；也可以继续使用 `backend/.env` 配置。
 真实 API Key 不要提交到 Git。
 
 ### 2. Start with CLI
@@ -189,7 +179,7 @@ CLI 可用于快速验证模型、工具、会话恢复、Memory、MCP、Run 和
 已经完成设置时可以跳过第一条命令；旧入口 `.venv/bin/python -m app.models.chat`
 仍然兼容。
 
-### 3. Start Vesta Host and Desktop
+### 3. Start LongWall Host and Desktop
 
 终端 1：
 
@@ -213,7 +203,7 @@ npm run electron:dev
 ### MCP
 
 Desktop 的“设置 → 扩展能力”支持粘贴 GitHub 地址或外部 `mcpServers` JSON，先展示解析
-结果和即将执行的命令，再由用户确认安装。MCP 工具注册后仍会经过 Vesta 的权限、执行、
+结果和即将执行的命令，再由用户确认安装。MCP 工具注册后仍会经过 LongWall 的权限、执行、
 Hook 和 Trace 链路；MCP 子进程默认只能读写 workspace，Host 环境变量使用白名单传递。
 可在扩展配置中关闭网络或收紧文件权限，显式选择宿主机执行会显示为危险模式。
 
@@ -262,7 +252,7 @@ GitHub Actions 会运行以上 Backend、Desktop 和 Native macOS 基线。
 ## Repository Layout
 
 ```text
-vesta/
+LongWall/
 ├── backend/                         Python Harness、Host、CLI 与测试
 │   ├── app/
 │   │   ├── agent/                   AgentRuntime 与事件
@@ -278,7 +268,7 @@ vesta/
 │   │   ├── scheduler/               定时调度
 │   │   ├── computer/                Computer Runtime
 │   │   ├── mcp/                     MCP Client
-│   │   └── server/                  Vesta Host 与 WS /rpc
+│   │   └── server/                  LongWall Host 与 WS /rpc
 │   └── tests/                        离线测试、E2E 与 Eval
 ├── desktop/                          Electron + React + TypeScript + Vite
 ├── native/macos-computer-helper/     macOS 原生 Helper
@@ -288,7 +278,7 @@ vesta/
 
 ## Current Boundaries
 
-- Vesta 目前以本地单用户环境为目标，不是公网多租户服务；
+- LongWall 目前以本地单用户环境为目标，不是公网多租户服务；
 - Computer Runtime 当前只支持 macOS；
 - MCP 当前主要接入 stdio Server；
 - Skill Learning 生成 Candidate，不自动绕过人工确认；

@@ -27,10 +27,10 @@ function sandboxApprovalLabel(approval: ApprovalRequest): string {
 
 function sandboxApprovalDescription(approval: ApprovalRequest): string {
   if (['run_shell_command', 'run_command'].includes(approval.tool_name)) {
-    return 'Vesta 需要在本地终端执行以下命令。请确认命令内容和影响后再允许。'
+    return 'LongWall 需要在本地终端执行以下命令。请确认命令内容和影响后再允许。'
   }
   if (approval.tool_name === 'http_request') {
-    return 'Vesta 需要向外部服务发送网络请求。请确认目标和参数后再允许。'
+    return 'LongWall 需要向外部服务发送网络请求。请确认目标和参数后再允许。'
   }
   return '这项操作可能修改本地环境或访问外部资源，请确认后再继续。'
 }

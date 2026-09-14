@@ -219,7 +219,7 @@ async def test_write_file_creates_parent_and_returns_metadata(
 @pytest.mark.asyncio
 async def test_read_file_returns_utf8_text(tmp_path: Path) -> None:
     target = tmp_path / "文档.txt"
-    target.write_text("你好，Vesta", encoding="utf-8")
+    target.write_text("你好，LongWall", encoding="utf-8")
     registry = ToolRegistry()
     registry.register(ReadFileTool(tmp_path))
     executor = ToolExecutor(registry)
@@ -233,7 +233,7 @@ async def test_read_file_returns_utf8_text(tmp_path: Path) -> None:
     )
 
     assert result.success is True
-    assert result.output == "你好，Vesta"
+    assert result.output == "你好，LongWall"
     assert result.duration_ms >= 0
 
 

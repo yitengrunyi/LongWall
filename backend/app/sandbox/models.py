@@ -1,4 +1,4 @@
-"""Vesta 不可信进程的沙箱策略模型。"""
+"""LongWall 不可信进程的沙箱策略模型。"""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class SandboxFilesystemMode(StrEnum):
-    """沙箱对 Vesta workspace 的访问级别。"""
+    """沙箱对 LongWall workspace 的访问级别。"""
 
     NONE = "none"
     READ_ONLY = "read_only"

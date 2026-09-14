@@ -17,7 +17,7 @@ import logging
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 
-logger = logging.getLogger("vesta.post_run")
+logger = logging.getLogger("longwall.post_run")
 
 PostRunJob = Callable[[], Awaitable[None]]
 

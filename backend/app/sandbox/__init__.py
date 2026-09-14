@@ -1,4 +1,4 @@
-"""Vesta 不可信进程沙箱。"""
+"""LongWall 不可信进程沙箱。"""
 
 from .backends import (
     HostSandboxBackend,

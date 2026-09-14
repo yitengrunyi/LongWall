@@ -46,7 +46,7 @@ export default function Sidebar({
 
   return (
     <nav className="sidebar" aria-label="主导航">
-      <div className="sidebar-brand" aria-label="Vesta">Vesta</div>
+      <div className="sidebar-brand" aria-label="LongWall">LongWall</div>
       <div className="sidebar-nav">
         {SIDEBAR_ITEMS.map((item) => (
           <button

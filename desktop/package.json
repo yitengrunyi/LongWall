@@ -1,8 +1,8 @@
 {
-  "name": "vesta-desktop",
+  "name": "longwall-desktop",
   "version": "0.1.0",
   "private": true,
-  "description": "Vesta Desktop — Electron + React + TypeScript + Vite",
+  "description": "LongWall Desktop — Electron + React + TypeScript + Vite",
   "main": "dist-electron/electron/main.js",
   "scripts": {
     "dev": "vite",

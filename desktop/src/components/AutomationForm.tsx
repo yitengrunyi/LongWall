@@ -71,7 +71,7 @@ export default function AutomationForm({
       <header className="automation-form__header">
         <div>
           <span className="automation-form__eyebrow">新建自动化</span>
-          <h2>让 Vesta 按时完成工作</h2>
+          <h2>让 LongWall 按时完成工作</h2>
           <p>设置执行内容和触发时间，保存后会由 Host 持续调度。</p>
         </div>
       </header>
@@ -84,7 +84,7 @@ export default function AutomationForm({
         <label className="automation-form__field">
           <span>执行指令</span>
           <textarea
-            placeholder="详细描述触发时希望 Vesta 完成的任务…"
+            placeholder="详细描述触发时希望 LongWall 完成的任务…"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             rows={4}

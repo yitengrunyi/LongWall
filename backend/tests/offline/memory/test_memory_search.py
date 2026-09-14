@@ -568,7 +568,7 @@ def test_memory_search_registered_and_not_deferred() -> None:
     )
 
     registry = ToolRegistry()
-    manager = MemoryManager(Path("/nonexistent-vesta-memory"))
+    manager = MemoryManager(Path("/nonexistent-longwall-memory"))
     register_memory_tools(registry, manager)
 
     names = {

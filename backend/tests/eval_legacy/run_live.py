@@ -132,7 +132,7 @@ async def main(args: argparse.Namespace) -> int:
     root = (
         args.root / f"eval-{invocation_id}"
         if args.root is not None
-        else Path(tempfile.mkdtemp(prefix="vesta-eval-"))
+        else Path(tempfile.mkdtemp(prefix="longwall-eval-"))
     )
     root.mkdir(parents=True, exist_ok=True)
     settings = ModelSettings()

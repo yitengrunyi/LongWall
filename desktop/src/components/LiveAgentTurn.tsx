@@ -54,7 +54,7 @@ export default function LiveAgentTurn({
     <section
       className={`agent-turn live-turn agent-turn--${view.status}${settling ? ' live-turn--settling' : ''}`}
       aria-live="polite"
-      aria-label="Vesta Agent Turn"
+      aria-label="LongWall Agent Turn"
       data-status={view.status}
     >
       <header className="agent-turn__header">
@@ -63,7 +63,7 @@ export default function LiveAgentTurn({
             className={`message-assistant__avatar${!terminal ? ' message-assistant__avatar--busy' : ''}`}
             aria-hidden="true"
           />
-          Vesta
+          LongWall
         </div>
         {view.status !== 'completed' ? (
           <span className={`agent-turn__status agent-turn__status--${status.tone}`}>

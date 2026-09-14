@@ -130,7 +130,7 @@ def metric_from_phase(
 
 def render_report(report: MemoryEvalReport) -> str:
     lines = [
-        "# Vesta Memory Eval Report",
+        "# LongWall Memory Eval Report",
         "",
         "## 汇总",
         "",

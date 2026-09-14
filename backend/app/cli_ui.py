@@ -1,4 +1,4 @@
-"""Vesta CLI 的启动页与首次模型配置流程。"""
+"""LongWall CLI 的启动页与首次模型配置流程。"""
 
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ def print_banner() -> None:
 
     print()
     print("┌──────────────────────────────────────────────────────────┐")
-    print("│  Vesta CLI                                               │")
+    print("│  LongWall CLI                                            │")
     print("│  Build agents that remember, continue, and learn.        │")
     print("└──────────────────────────────────────────────────────────┘")
 
@@ -62,7 +62,7 @@ async def run_setup(
     providers = tuple(view["providers"])
 
     print_banner()
-    output_fn("首次设置 · 密钥保存到 macOS Keychain，非敏感配置保存到 .vesta。")
+    output_fn("首次设置 · 密钥保存到 macOS Keychain，非敏感配置保存到 .longwall。")
     output_fn("")
     try:
         selected = _choose_provider(
@@ -144,7 +144,7 @@ async def run_setup(
                     f"{result['provider']}/{result['model']} · "
                     f"{result['duration_ms']:.0f}ms"
                 )
-        return _confirm("现在进入 Vesta？[Y/n] ", input_fn)
+        return _confirm("现在进入 LongWall？[Y/n] ", input_fn)
     except (EOFError, KeyboardInterrupt):
         output_fn("\n设置已取消。")
         return False

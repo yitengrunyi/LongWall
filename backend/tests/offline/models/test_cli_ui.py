@@ -67,7 +67,7 @@ def test_cli_banner_and_status_are_compact(capsys: pytest.CaptureFixture[str]) -
     )
 
     output = capsys.readouterr().out
-    assert "Vesta CLI" in output
+    assert "LongWall CLI" in output
     assert "deepseek/deepseek-chat" in output
     assert "存在 MCP 启动失败" in output
     assert "/help 查看命令" in output

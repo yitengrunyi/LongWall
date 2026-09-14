@@ -30,7 +30,7 @@ function event(partial: Partial<AgentEvent>): AgentEvent {
 describe('LiveAgentTurn', () => {
   it('无事件时显示中文等待提示', () => {
     const html = renderToStaticMarkup(<LiveAgentTurn runId="run-1" step={1} events={[]} />)
-    expect(html).toContain('Vesta')
+    expect(html).toContain('LongWall')
     expect(html).not.toContain('live-turn__pulse')
     expect(html).toContain('正在思考')
     expect(html).toContain('live-turn__waiting')

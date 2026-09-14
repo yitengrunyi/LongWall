@@ -2,7 +2,7 @@
 
 
 class MCPError(RuntimeError):
-    """Vesta 可识别的 MCP 基础错误。"""
+    """LongWall 可识别的 MCP 基础错误。"""
 
 
 class MCPConfigurationError(MCPError):

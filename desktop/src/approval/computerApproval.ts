@@ -22,7 +22,7 @@ export function isComputerApproval(approval: ApprovalRequest): boolean {
   return isDesktopApproval(approval)
 }
 
-/** Sandbox 审批：作用于 Vesta 沙盒 / 宿主，永远进 Chat。 */
+/** Sandbox 审批：作用于 LongWall 沙盒 / 宿主，永远进 Chat。 */
 export function isSandboxApproval(approval: ApprovalRequest): boolean {
   return !isDesktopApproval(approval)
 }
@@ -62,12 +62,12 @@ const ACTION_LABELS: Record<string, string> = {
 }
 
 const ACTION_DESCRIPTIONS: Record<string, string> = {
-  computer_click: 'Vesta 准备点击当前应用中的界面元素。',
-  computer_type: 'Vesta 准备向当前应用输入下面的文本。',
-  computer_key: 'Vesta 准备向当前应用发送按键或快捷键。',
-  computer_scroll: 'Vesta 准备滚动当前应用窗口。',
-  computer_open_app: 'Vesta 准备打开一个应用。',
-  computer_focus_window: 'Vesta 准备切换到目标应用窗口。',
+  computer_click: 'LongWall 准备点击当前应用中的界面元素。',
+  computer_type: 'LongWall 准备向当前应用输入下面的文本。',
+  computer_key: 'LongWall 准备向当前应用发送按键或快捷键。',
+  computer_scroll: 'LongWall 准备滚动当前应用窗口。',
+  computer_open_app: 'LongWall 准备打开一个应用。',
+  computer_focus_window: 'LongWall 准备切换到目标应用窗口。',
 }
 
 /** 主要动作名（如“输入文本”）；未知 computer_* 使用通用电脑操作文案。 */
@@ -79,7 +79,7 @@ export function computerActionLabel(approval: ApprovalRequest): string {
 export function computerActionDescription(approval: ApprovalRequest): string {
   return (
     ACTION_DESCRIPTIONS[approval.tool_name] ??
-    'Vesta 准备操作这台 Mac。'
+    'LongWall 准备操作这台 Mac。'
   )
 }
 

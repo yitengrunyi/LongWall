@@ -251,11 +251,11 @@ export function humanizeRunError(
   const known: Record<string, { title: string; message: string }> = {
     max_steps: {
       title: '本轮执行已暂停',
-      message: '执行步骤已达到上限，任务可能尚未完全完成。你可以继续发送消息，让 Vesta 接着处理。',
+      message: '执行步骤已达到上限，任务可能尚未完全完成。你可以继续发送消息，让 LongWall 接着处理。',
     },
     repeated_tool_call: {
       title: '执行遇到循环',
-      message: 'Vesta 连续尝试了相同操作但没有取得进展。请补充信息，或换一种方式继续。',
+      message: 'LongWall 连续尝试了相同操作但没有取得进展。请补充信息，或换一种方式继续。',
     },
     stale_observation: {
       title: '电脑画面已经变化',
@@ -279,7 +279,7 @@ export function humanizeRunError(
     },
     run_budget: {
       title: '本轮用量已达上限',
-      message: 'Vesta 已停止继续消耗模型用量。已完成的结果仍会保留，你可以在下一条消息中继续。',
+      message: 'LongWall 已停止继续消耗模型用量。已完成的结果仍会保留，你可以在下一条消息中继续。',
     },
     interrupted: {
       title: '执行已中断',
@@ -292,7 +292,7 @@ export function humanizeRunError(
   }
   const presentation = known[stopReason ?? ''] ?? {
     title: '本轮未能完成',
-    message: 'Vesta 已停止本轮执行。你可以查看技术详情，或调整要求后重试。',
+    message: 'LongWall 已停止本轮执行。你可以查看技术详情，或调整要求后重试。',
   }
   return {
     ...presentation,

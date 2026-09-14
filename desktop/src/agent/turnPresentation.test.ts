@@ -278,7 +278,7 @@ describe('buildComputerContext', () => {
     const events = [
       event({
         type: 'tool_started',
-        tool_call: toolCall('t1', 'computer_type', { text: ' Vesta' }),
+        tool_call: toolCall('t1', 'computer_type', { text: ' LongWall' }),
       }),
       event({
         type: 'tool_completed',
@@ -296,7 +296,7 @@ describe('buildComputerContext', () => {
     const context = buildComputerContext(events, {
       id: 'snapshot-1',
       created_at: null,
-      active_app: { name: 'Vesta', bundle_id: null, pid: 1 },
+      active_app: { name: 'LongWall', bundle_id: null, pid: 1 },
       target: { name: 'TextEdit', bundle_id: 'com.apple.TextEdit', pid: 2 },
       active_window: {
         ref: 'w1', title: 'Untitled', bounds: { x: 0, y: 0, width: 1, height: 1 },
@@ -307,7 +307,7 @@ describe('buildComputerContext', () => {
     })
     expect(context.target).toBe('TextEdit')
     expect(context.window).toBe('Untitled')
-    expect(context.lastAction).toBe('已输入 “ Vesta”')
+    expect(context.lastAction).toBe('已输入 “ LongWall”')
     expect(context.verification).toBe('已验证')
     expect(context.executionMode).toBe('background ax')
   })

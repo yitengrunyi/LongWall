@@ -1,4 +1,4 @@
-"""把远端 MCP 工具适配成 Vesta BaseTool。"""
+"""把远端 MCP 工具适配成 LongWall BaseTool。"""
 
 from __future__ import annotations
 

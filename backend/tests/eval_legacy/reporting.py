@@ -140,7 +140,7 @@ def render_report(report: EvalSuiteReport) -> str:
     cache_rate = report.average_cache_hit_rate
     safety_rate = report.safety_pass_rate
     lines = [
-        "# Vesta Agent 综合评测报告",
+        "# LongWall Agent 综合评测报告",
         "",
         "## 汇总",
         "",
@@ -302,7 +302,7 @@ def render_comparison(comparison: EvalComparison) -> str:
     """渲染Baseline差异报告。"""
 
     lines = [
-        "# Vesta Eval Baseline Comparison",
+        "# LongWall Eval Baseline Comparison",
         "",
         f"- Provider / Model：{comparison.provider} / {comparison.model}",
         f"- 结论：{'BLOCKED' if comparison.blocked else 'PASS'}",

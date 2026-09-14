@@ -1,4 +1,4 @@
-# Vesta Sandbox V1
+# LongWall Sandbox V1
 
 Sandbox V1 保护能够执行任意代码的入口，不改变 AgentRuntime 的 `ToolCall → ToolResult`
 协议。权限审批回答“是否允许做”，Sandbox 回答“获准后最多能影响哪里”。
@@ -9,7 +9,7 @@ Sandbox V1 保护能够执行任意代码的入口，不改变 AgentRuntime 的 
 - 第三方 stdio MCP Server：macOS Seatbelt 隔离整个子进程树；
 - MCP 环境变量：只继承 `HOME`、语言、`PATH`、证书和临时目录等运行必需项，配置中的
   `${ENV_NAME}` 按需注入；
-- `.git`、`.vesta`、`.env` 等控制边界和敏感文件在 workspace 内继续拒绝读取或写入；
+- `.git`、`.longwall`、`.env` 等控制边界和敏感文件在 workspace 内继续拒绝读取或写入；
 - 沙箱不可用、路径无效或策略无法强制时 fail closed。
 
 受控的内置文件、Task、Memory、Artifact 和 Search 工具继续在 Host 中执行，它们通过窄接口
@@ -60,7 +60,7 @@ MCP 默认配置：
 
 ## 运行时兼容根
 
-Seatbelt 在 deny-by-default 下仍需读取系统运行库、可执行文件和包管理器缓存。Vesta 仅为检测到的
+Seatbelt 在 deny-by-default 下仍需读取系统运行库、可执行文件和包管理器缓存。LongWall 仅为检测到的
 运行时开放必要目录，例如 Homebrew、npm cache、uv cache 与 uv tool directory，不开放整个用户
 主目录。uv/npm 的缓存写权限用于现有 `uvx` / `npx` MCP 启动兼容，不代表这些进程可以访问 SSH、
 浏览器或 Keychain 数据。

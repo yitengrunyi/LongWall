@@ -1,4 +1,4 @@
-"""Vesta MCP Client V1。"""
+"""LongWall MCP Client V1。"""
 
 from .client import MCPClientProtocol, StdioMCPClient, serialize_mcp_result
 from .config import (

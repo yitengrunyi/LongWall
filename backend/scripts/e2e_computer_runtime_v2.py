@@ -66,7 +66,7 @@ async def _main() -> None:
     runtime = MacOSComputerRuntime(client)
     run_id = f"e2e-computer-v2-{uuid4().hex}"
 
-    with tempfile.TemporaryDirectory(prefix="vesta-computer-v2-") as temp_dir:
+    with tempfile.TemporaryDirectory(prefix="longwall-computer-v2-") as temp_dir:
         document = Path(temp_dir) / "append-semantics.txt"
         document.write_text("", encoding="utf-8")
         await client.start()
@@ -93,11 +93,11 @@ async def _main() -> None:
             after_key = await runtime.observe(include_screenshot=False)
             editor = _editable(after_key)
 
-            appended = await runtime.type(" Vesta", element_ref=editor.ref)
+            appended = await runtime.type(" LongWall", element_ref=editor.ref)
             assert appended.verification_status is VerificationStatus.UNVERIFIED
-            _, editor = await _observe_until_text(runtime, "hello Vesta")
-            assert editor.value == "hello Vesta"
-            print("PASS: computer_type 保留原内容并得到 hello Vesta")
+            _, editor = await _observe_until_text(runtime, "hello LongWall")
+            assert editor.value == "hello LongWall"
+            print("PASS: computer_type 保留原内容并得到 hello LongWall")
 
             # 关闭本次精确目标窗口，避免 E2E 在桌面留下临时文档。
             await runtime.key("w", modifiers=("command",), element_ref=editor.ref)

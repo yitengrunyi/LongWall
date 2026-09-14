@@ -1,4 +1,4 @@
-/** Vesta Desktop 的统一 lucide 图标入口。 */
+/** LongWall Desktop 的统一 lucide 图标入口。 */
 
 import {
   Activity,

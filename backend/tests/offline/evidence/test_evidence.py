@@ -53,7 +53,7 @@ class UnrecordedOutputTool(LargeOutputTool):
 async def test_executor_archives_raw_output_before_model_preview_is_truncated(
     tmp_path,
 ) -> None:
-    store = SQLiteEvidenceStore(tmp_path / "vesta.db")
+    store = SQLiteEvidenceStore(tmp_path / "longwall.db")
     await store.initialize()
     registry = ToolRegistry()
     registry.register(LargeOutputTool())
@@ -86,7 +86,7 @@ async def test_executor_archives_raw_output_before_model_preview_is_truncated(
 async def test_evidence_tools_are_conversation_private_and_support_pagination(
     tmp_path,
 ) -> None:
-    store = SQLiteEvidenceStore(tmp_path / "vesta.db")
+    store = SQLiteEvidenceStore(tmp_path / "longwall.db")
     await store.initialize()
     record = await store.create(
         conversation_id="conversation-a",
@@ -129,7 +129,7 @@ async def test_evidence_tools_are_conversation_private_and_support_pagination(
 async def test_evidence_create_is_idempotent_but_content_is_immutable(
     tmp_path,
 ) -> None:
-    store = SQLiteEvidenceStore(tmp_path / "vesta.db")
+    store = SQLiteEvidenceStore(tmp_path / "longwall.db")
     await store.initialize()
     arguments = {
         "conversation_id": "conversation-a",
@@ -152,7 +152,7 @@ async def test_evidence_create_is_idempotent_but_content_is_immutable(
 
 @pytest.mark.asyncio
 async def test_concurrent_idempotent_create_returns_one_evidence(tmp_path) -> None:
-    store = SQLiteEvidenceStore(tmp_path / "vesta.db")
+    store = SQLiteEvidenceStore(tmp_path / "longwall.db")
     await store.initialize()
     arguments = {
         "conversation_id": "conversation-a",
@@ -176,7 +176,7 @@ async def test_evidence_capacity_rejects_new_content_without_changing_existing(
     tmp_path,
 ) -> None:
     store = SQLiteEvidenceStore(
-        tmp_path / "vesta.db",
+        tmp_path / "longwall.db",
         max_item_bytes=4,
         max_total_bytes=6,
     )
@@ -227,7 +227,7 @@ async def test_recorder_failure_does_not_turn_successful_tool_into_failure() -> 
 
 @pytest.mark.asyncio
 async def test_tool_definition_can_disable_output_recording(tmp_path) -> None:
-    store = SQLiteEvidenceStore(tmp_path / "vesta.db")
+    store = SQLiteEvidenceStore(tmp_path / "longwall.db")
     await store.initialize()
     registry = ToolRegistry()
     registry.register(UnrecordedOutputTool())
@@ -250,7 +250,7 @@ async def test_tool_definition_can_disable_output_recording(tmp_path) -> None:
 
 @pytest.mark.asyncio
 async def test_attribution_failure_still_archives_raw_output(tmp_path) -> None:
-    store = SQLiteEvidenceStore(tmp_path / "vesta.db")
+    store = SQLiteEvidenceStore(tmp_path / "longwall.db")
     await store.initialize()
     recorder = EvidenceRecorder(
         store,
@@ -296,7 +296,7 @@ async def test_recorder_attributes_evidence_to_active_task_step(tmp_path) -> Non
             step_status=TaskStepStatus.IN_PROGRESS,
         ),
     )
-    store = SQLiteEvidenceStore(tmp_path / "vesta.db")
+    store = SQLiteEvidenceStore(tmp_path / "longwall.db")
     await store.initialize()
     recorder = EvidenceRecorder(
         store,

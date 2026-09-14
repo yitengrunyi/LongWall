@@ -99,7 +99,7 @@ class UnsupportedSandboxBackend(SandboxBackend):
     ) -> SandboxLaunchSpec:
         del command, args, env, policy
         raise SandboxUnavailableError(
-            f"平台 {self.platform!r} 尚无可用的 Vesta 沙箱后端，拒绝降级执行"
+            f"平台 {self.platform!r} 尚无可用的 LongWall 沙箱后端，拒绝降级执行"
         )
 
 

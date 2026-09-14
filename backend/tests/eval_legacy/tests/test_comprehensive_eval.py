@@ -177,7 +177,7 @@ def test_report_json_round_trip_and_markdown(tmp_path: Path) -> None:
     assert loaded.expected_sample_count == 1
     assert loaded.actual_sample_count == 1
     assert loaded.complete is True
-    assert "Vesta Agent 综合评测报告" in markdown
+    assert "LongWall Agent 综合评测报告" in markdown
     assert "稳定通过率" in markdown
     assert "Chargeable" in markdown
 

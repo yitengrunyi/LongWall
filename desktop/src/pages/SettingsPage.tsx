@@ -27,7 +27,7 @@ export default function SettingsPage(): React.JSX.Element {
     retry: false,
   })
 
-  const desktop = window.vesta
+  const desktop = window.longwall
 
   const doRequestPermission = async (
     permission: 'accessibility' | 'screen_recording',
@@ -43,7 +43,7 @@ export default function SettingsPage(): React.JSX.Element {
   return (
     <PageShell
       title="设置"
-      subtitle="管理 Vesta 的运行环境与扩展能力。"
+      subtitle="管理 LongWall 的运行环境与扩展能力。"
       maxWidth={1120}
     >
       <div className="settings-layout">
@@ -69,14 +69,14 @@ export default function SettingsPage(): React.JSX.Element {
 
               <section className="settings-group">
                 <header className="settings-group__header">
-                  <div><h3>Vesta Host</h3><p>模型服务与本地数据运行状态</p></div>
+                  <div><h3>LongWall Host</h3><p>模型服务与本地数据运行状态</p></div>
                   {!infoQuery.isLoading && !infoQuery.isError ? <span className="settings-status"><i />已连接</span> : null}
                 </header>
                 {infoQuery.isLoading ? (
                   <div className="settings-loading"><span className="spinner" />正在检查 Host…</div>
                 ) : infoQuery.isError ? (
                   <ErrorState
-                    message="无法连接 Vesta Host"
+                    message="无法连接 LongWall Host"
                     hint="请在 backend 目录运行 python -m app.server，然后重试。"
                     onRetry={() => void infoQuery.refetch()}
                   />

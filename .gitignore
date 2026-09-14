@@ -1,3 +1,6 @@
+# macOS
+.DS_Store
+
 # Secrets and local configuration
 .env
 .env.*
@@ -13,25 +16,22 @@ __pycache__/
 # Virtual environments
 .venv/
 
+# Local scratch files
+tmp/
+
 # Local runtime data
 workspace/*
 !workspace/.gitkeep
 output/
-.vesta/
-backend/.vesta/
-# 旧数据目录（迁移前仍忽略，避免误提交用户已有数据）
-.oneagent/
-backend/.oneagent/
+.longwall/
+backend/.longwall/
 
 # Local evaluation artifacts
-backend/tests/eval_legacy/reports/*.md
-!backend/tests/eval_legacy/reports/README.md
-backend/tests/eval_legacy/reports/historical/runtime/*.md
-backend/tests/eval_legacy/reports/historical/skill_learning/*.md
+backend/tests/eval_legacy/reports/
 
 # Public documentation allowlist
 # docs 默认只保留 README 使用的演示资源和公开 Sandbox 说明，
-# 评测记录、学习笔记、开发记录与面试资料均仅保存在本地。
+# 评测记录、学习笔记与开发记录仅保存在本地。
 docs/*
 !docs/assets/
 !docs/assets/**

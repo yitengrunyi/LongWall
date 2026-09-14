@@ -14,7 +14,7 @@ from .errors import MCPConfigurationError
 from .models import MCPServerConfig, MCPSettings
 
 DEFAULT_MCP_CONFIG_PATH = (
-    Path(__file__).resolve().parents[2] / ".vesta" / "mcp.json"
+    Path(__file__).resolve().parents[2] / ".longwall" / "mcp.json"
 )
 
 

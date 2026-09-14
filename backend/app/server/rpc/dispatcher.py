@@ -19,7 +19,7 @@ if TYPE_CHECKING:
 
     from .connection import RpcConnection
 
-logger = logging.getLogger("vesta.server.rpc.dispatcher")
+logger = logging.getLogger("longwall.server.rpc.dispatcher")
 
 Handler = Callable[[dict[str, Any], "RpcContext"], Awaitable[Any]]
 

@@ -1,4 +1,4 @@
-"""Vesta Host 测试（全部用离线 fake model，不调用真实模型 API）。
+"""LongWall Host 测试（全部用离线 fake model，不调用真实模型 API）。
 
 覆盖：WebSocket JSON-RPC 协议（request/response correlation / parse error /
 invalid request / method not found / invalid params / internal error /
@@ -198,7 +198,7 @@ def make_app(tmp_path):
         application = Application(
             provider="fake",
             model="fake-model",
-            database=tmp_path / "vesta.db",
+            database=tmp_path / "longwall.db",
             tasks_dir=tmp_path / "tasks",
             mcp_config=tmp_path / "mcp.json",
             memory_dir=tmp_path / "memory",
@@ -1524,7 +1524,7 @@ async def test_application_start_close_idempotent(tmp_path: Path) -> None:
     application = Application(
         provider="fake",
         model="fake-model",
-        database=tmp_path / "vesta.db",
+        database=tmp_path / "longwall.db",
         tasks_dir=tmp_path / "tasks",
         mcp_config=tmp_path / "mcp.json",
         memory_dir=tmp_path / "memory",

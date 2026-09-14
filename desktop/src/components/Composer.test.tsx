@@ -10,7 +10,7 @@ describe('Composer', () => {
     const html = renderToStaticMarkup(
       <Composer disabled={false} mode="normal" onModeChange={() => {}} onSend={async () => {}} />,
     )
-    expect(html).toContain('告诉 Vesta 你想完成什么')
+    expect(html).toContain('告诉 LongWall 你想完成什么')
     expect(html).toContain('普通')
     expect(html).toContain('规划')
     expect(html).toContain('aria-label="发送"')

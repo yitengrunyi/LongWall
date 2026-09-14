@@ -387,12 +387,12 @@ async def test_load_settings_handles_missing_and_invalid_config(tmp_path: Path) 
 async def test_missing_environment_reference_fails_only_that_server(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    monkeypatch.delenv("VESTA_MISSING_MCP_KEY", raising=False)
+    monkeypatch.delenv("LONGWALL_MISSING_MCP_KEY", raising=False)
     config = MCPServerConfig(
         name="missing_env",
         command=sys.executable,
         args=("-c", "pass"),
-        env={"API_KEY": "${VESTA_MISSING_MCP_KEY}"},
+        env={"API_KEY": "${LONGWALL_MISSING_MCP_KEY}"},
     )
     registry = ToolRegistry()
     manager = MCPClientManager((config,))
@@ -400,7 +400,7 @@ async def test_missing_environment_reference_fails_only_that_server(
     statuses = await manager.start(registry)
 
     assert statuses[0].state is MCPServerState.FAILED
-    assert "VESTA_MISSING_MCP_KEY" in (statuses[0].error or "")
+    assert "LONGWALL_MISSING_MCP_KEY" in (statuses[0].error or "")
 
 
 def test_mcp_config_defaults_to_workspace_sandbox() -> None:
@@ -414,7 +414,7 @@ def test_mcp_environment_does_not_inherit_unlisted_host_secret(
 ) -> None:
     from app.mcp.client import _resolve_environment
 
-    monkeypatch.setenv("VESTA_HOST_SECRET", "must-not-leak")
+    monkeypatch.setenv("LONGWALL_HOST_SECRET", "must-not-leak")
     monkeypatch.setenv("PATH", "/usr/bin")
 
     environment = _resolve_environment(
@@ -422,7 +422,7 @@ def test_mcp_environment_does_not_inherit_unlisted_host_secret(
     )
 
     assert environment["PATH"] == "/usr/bin"
-    assert "VESTA_HOST_SECRET" not in environment
+    assert "LONGWALL_HOST_SECRET" not in environment
 
 
 def test_serialize_mcp_result_preserves_text_and_structured_content() -> None:

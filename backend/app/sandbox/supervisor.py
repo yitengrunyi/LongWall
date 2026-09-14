@@ -22,7 +22,7 @@ from .models import (
 
 _PROTECTED_RELATIVE_PATHS = (
     ".git",
-    ".vesta",
+    ".longwall",
     ".env",
     "backend/.env",
 )

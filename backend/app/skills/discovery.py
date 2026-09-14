@@ -20,13 +20,13 @@ from .models import (
 )
 from .parser import SkillParseError, parse_skill_document
 
-logger = logging.getLogger("vesta.skills.discovery")
+logger = logging.getLogger("longwall.skills.discovery")
 
 MAX_SKILL_FILE_BYTES = 512_000
 
-DEFAULT_USER_SKILLS_DIR = Path.home() / ".vesta" / "skills"
+DEFAULT_USER_SKILLS_DIR = Path.home() / ".longwall" / "skills"
 DEFAULT_PROJECT_SKILLS_DIR = (
-    Path(__file__).resolve().parents[2] / ".vesta" / "skills"
+    Path(__file__).resolve().parents[2] / ".longwall" / "skills"
 )
 
 

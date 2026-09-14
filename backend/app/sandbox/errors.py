@@ -2,7 +2,7 @@
 
 
 class SandboxError(RuntimeError):
-    """Vesta 可识别的沙箱基础错误。"""
+    """LongWall 可识别的沙箱基础错误。"""
 
 
 class SandboxPolicyError(SandboxError):

@@ -82,7 +82,7 @@ export default function CommandPalette({
         className="command-palette"
         role="dialog"
         aria-modal="true"
-        aria-label="Vesta 快捷命令"
+        aria-label="LongWall 快捷命令"
         onMouseDown={(event) => event.stopPropagation()}
       >
         <div className="command-palette__search">

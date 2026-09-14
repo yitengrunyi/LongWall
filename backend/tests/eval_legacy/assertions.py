@@ -262,7 +262,7 @@ def _check_skill(
             # MODEL_STARTED 描述的就是压缩完成后实际发送的 ModelRequest，
             # 因此当前压缩请求本身也必须计入；不能强迫模型为了评测再多走一步。
             # 只依赖 run state 的 active_skill_names 仍不够，必须确认请求实际
-            # 注入了 vesta_active_skill 消息，并对应声明要激活的 Skill。
+            # 注入了 longwall_active_skill 消息，并对应声明要激活的 Skill。
             wanted = set(expect.activated)
             compaction_ok = any(
                 bool(event.active_skill_message_names)

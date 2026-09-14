@@ -1,4 +1,4 @@
-"""Vesta Host：本地 FastAPI + JSON-RPC WebSocket transport。"""
+"""LongWall Host：本地 FastAPI + JSON-RPC WebSocket transport。"""
 
 from .app import create_app
 from .rpc import (

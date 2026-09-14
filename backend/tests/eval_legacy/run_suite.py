@@ -42,7 +42,7 @@ _VALID_TIERS = ("smoke", "regression", "manual")
 
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Run Vesta comprehensive live eval suites."
+        description="Run LongWall comprehensive live eval suites."
     )
     parser.add_argument(
         "--suite",
@@ -95,7 +95,7 @@ async def main(args: argparse.Namespace) -> int:
     root = (
         args.root / f"eval-{invocation}"
         if args.root
-        else Path(tempfile.mkdtemp(prefix="vesta-comprehensive-eval-"))
+        else Path(tempfile.mkdtemp(prefix="longwall-comprehensive-eval-"))
     )
     output = args.out_dir or _REPORTS_DIR / invocation
     expected_stability_keys = _expected_stability_keys(args, suites)
@@ -108,7 +108,7 @@ async def main(args: argparse.Namespace) -> int:
         expected_sample_count=len(expected_stability_keys) * args.runs,
         expected_stability_keys=expected_stability_keys,
         git_commit=(
-            os.environ.get("VESTA_EVAL_GIT_COMMIT")
+            os.environ.get("LONGWALL_EVAL_GIT_COMMIT")
             or os.environ.get("GITHUB_SHA")
         ),
         scenario_digest=_scenario_digest(args, suites),

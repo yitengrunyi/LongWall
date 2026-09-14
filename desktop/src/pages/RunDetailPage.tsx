@@ -150,7 +150,7 @@ export default function RunDetailPage({
       <ConfirmDialog
         open={confirmCancel}
         title="Stop this Run?"
-        message="Vesta will stop after the current cancellable operation."
+        message="LongWall will stop after the current cancellable operation."
         confirmLabel="Stop Run"
         onConfirm={() => void cancel()}
         onCancel={() => setConfirmCancel(false)}

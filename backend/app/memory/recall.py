@@ -24,7 +24,7 @@ from .search_index import MemorySearchResult, SearchMode
 if TYPE_CHECKING:
     from .manager import MemoryManager
 
-MEMORY_RECALL_MESSAGE_NAME = "vesta_memory_recall"
+MEMORY_RECALL_MESSAGE_NAME = "longwall_memory_recall"
 
 
 @dataclass(frozen=True, slots=True)

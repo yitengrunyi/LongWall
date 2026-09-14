@@ -34,7 +34,7 @@ from .session import (
 )
 
 __all__ = ["MacOSComputerRuntime"]
-logger = logging.getLogger("vesta.computer.macos")
+logger = logging.getLogger("longwall.computer.macos")
 _TEXT_ENTRY_ROLES = frozenset({"text_area", "text_field", "combo_box"})
 
 # 结构化错误码 → 模型友好的 recovery hint。
@@ -131,7 +131,7 @@ class MacOSComputerRuntime:
             (
                 screenshot_dir
                 or Path(__file__).resolve().parents[2]
-                / ".vesta"
+                / ".longwall"
                 / "computer"
                 / "screenshots"
             )

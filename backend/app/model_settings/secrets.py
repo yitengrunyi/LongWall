@@ -18,7 +18,7 @@ class ModelSecretStore(Protocol):
 class MacOSKeychainSecretStore:
     """通过macOS Keychain保存密钥，不把密钥写入项目或JSON。"""
 
-    service = "com.vesta.desktop.model-api-key"
+    service = "com.longwall.desktop.model-api-key"
 
     def get(self, provider: str) -> str | None:
         if sys.platform != "darwin":

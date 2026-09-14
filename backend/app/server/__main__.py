@@ -1,4 +1,4 @@
-"""Vesta Host 入口：``python -m app.server``。"""
+"""LongWall Host 入口：``python -m app.server``。"""
 
 from __future__ import annotations
 
@@ -11,13 +11,13 @@ from typing import Any
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Run the Vesta Host (FastAPI + JSON-RPC WebSocket)."
+        description="Run the LongWall Host (FastAPI + JSON-RPC WebSocket)."
     )
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument(
         "--database",
-        help="SQLite database path (default: backend/.vesta/vesta.db).",
+        help="SQLite database path (default: backend/.longwall/longwall.db).",
     )
     parser.add_argument("--provider", help="Model provider (default: auto-select).")
     parser.add_argument("--model", help="Override the configured model name.")
@@ -96,8 +96,8 @@ async def _serve(args: argparse.Namespace) -> int:
         await server.serve()
         if not restart_requested:
             return 0
-        logging.getLogger("vesta.server").info(
-            "Restarting Vesta Host with saved configuration"
+        logging.getLogger("longwall.server").info(
+            "Restarting LongWall Host with saved configuration"
         )
 
 

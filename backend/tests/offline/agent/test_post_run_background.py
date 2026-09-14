@@ -460,7 +460,7 @@ async def test_application_close_drains_post_run(tmp_path: Path) -> None:
     app = Application(
         provider="main",
         model="main-model",
-        database=tmp_path / "vesta.db",
+        database=tmp_path / "longwall.db",
         tasks_dir=tmp_path / "tasks",
         mcp_config=tmp_path / "mcp.json",
         memory_dir=tmp_path / "memory",

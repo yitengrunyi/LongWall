@@ -16,7 +16,7 @@ from app.models.types import Message, ToolCall
 from .models import Conversation, ConversationMessageRecord
 
 DEFAULT_DATABASE_PATH = (
-    Path(__file__).resolve().parents[2] / ".vesta" / "vesta.db"
+    Path(__file__).resolve().parents[2] / ".longwall" / "longwall.db"
 )
 
 _SCHEMA = """

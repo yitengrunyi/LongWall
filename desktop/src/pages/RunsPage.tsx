@@ -64,7 +64,7 @@ export default function RunsPage({
       {query.isPending ? <LoadingState label="正在加载执行历史…" />
         : query.isError ? <ErrorState message={String(query.error)} onRetry={() => void query.refetch()} />
           : runs.length === 0 ? (
-            <EmptyState title="当前没有执行记录" hint="Vesta 开始处理工作后，Run 会出现在这里。" icon="runs" />
+            <EmptyState title="当前没有执行记录" hint="LongWall 开始处理工作后，Run 会出现在这里。" icon="runs" />
           ) : (
             <div className="run-history">
               {runs.map((run) => {

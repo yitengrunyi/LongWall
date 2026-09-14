@@ -17,7 +17,7 @@ from app.tools.hooks import ToolExecutionContext, ToolHook, ToolHookDecision
 if TYPE_CHECKING:
     from .session import ComputerSessionManager
 
-logger = logging.getLogger("vesta.computer.lease")
+logger = logging.getLogger("longwall.computer.lease")
 
 
 class ComputerBusyError(RuntimeError):

@@ -3,7 +3,7 @@
 目录结构：
 
 ```text
-.vesta/memory/
+.longwall/memory/
 ├── CORE.md
 ├── INDEX.md
 ├── active/M001.md ...
@@ -30,10 +30,10 @@ from .models import (
     parse_memory_markdown,
 )
 
-DEFAULT_MEMORY_DIR = Path(__file__).resolve().parents[2] / ".vesta" / "memory"
+DEFAULT_MEMORY_DIR = Path(__file__).resolve().parents[2] / ".longwall" / "memory"
 _MAX_MEMORY_FILE_BYTES = 512_000
 
-logger = logging.getLogger("vesta.memory.store")
+logger = logging.getLogger("longwall.memory.store")
 
 
 class MemoryStore:

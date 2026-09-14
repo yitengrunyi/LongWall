@@ -89,7 +89,7 @@ export default function Composer({
               void submit()
             }
           }}
-          placeholder="告诉 Vesta 你想完成什么…"
+          placeholder="告诉 LongWall 你想完成什么…"
           rows={1}
           disabled={busy}
           aria-label="消息输入框"

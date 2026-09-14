@@ -80,7 +80,7 @@ class ToolPermission(StrEnum):
 class ToolUiScope(StrEnum):
     """工具审批的展示落点（声明式路由，前端不靠 tool_name 前缀猜测）。
 
-    - SANDBOX: 作用于 Vesta 沙盒 / 宿主（shell、http…），审批属于对话工作流，
+    - SANDBOX: 作用于 LongWall 沙盒 / 宿主（shell、http…），审批属于对话工作流，
       永远进 Chat。
     - DESKTOP: 作用于用户真实桌面（computer…），审批跟随用户注意力：
       主窗口聚焦进 Chat，否则进 Floating Window。

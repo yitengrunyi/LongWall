@@ -76,7 +76,7 @@ export default memo(function MessageList({
     return (
       <EmptyState
         title="开始对话"
-        hint="向 Vesta 描述你想做的事，Enter 发送。"
+        hint="向 LongWall 描述你想做的事，Enter 发送。"
       />
     )
   }
@@ -106,7 +106,7 @@ export default memo(function MessageList({
           <div key={turn.key} className="message-assistant">
             <div className="message-assistant__author">
               <span className="message-assistant__avatar" aria-hidden="true" />
-              Vesta
+              LongWall
             </div>
             <AssistantContent content={turn.content} />
           </div>

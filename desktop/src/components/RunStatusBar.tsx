@@ -1,7 +1,7 @@
 /** Run Status Bar：Agent Command Workspace 的顶部状态条。
 
 不再是「conversation title + Activity」的聊天页头，而是当前 Run 的主状态视觉：
-- 左侧：Vesta、当前会话或任务标题、当前动作。
+- 左侧：LongWall、当前会话或任务标题、当前动作。
 - 中间：运行阶段、模式、步骤、操作数、用量和耗时。
 - 右侧：停止、恢复和详情入口。
 - 失败或中断时：展示中文原因、统计数据和可用操作。
@@ -122,7 +122,7 @@ export default function RunStatusBar({
       </button>
 
       <div className="run-status-bar__identity">
-        <span className="run-status-bar__brand">Vesta</span>
+        <span className="run-status-bar__brand">LongWall</span>
         <span className="run-status-bar__title">{title}</span>
         {running && currentAction ? (
           <span className="run-status-bar__action">· {currentAction}</span>

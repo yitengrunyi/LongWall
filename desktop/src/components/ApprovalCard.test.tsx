@@ -60,7 +60,7 @@ describe('ApprovalCard', () => {
       />,
     )
     expect(html).toContain('允许“输入文本”吗？')
-    expect(html).toContain('Vesta 准备向当前应用输入')
+    expect(html).toContain('LongWall 准备向当前应用输入')
     expect(html).toContain('computer_type')
   })
 })

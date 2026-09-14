@@ -57,7 +57,7 @@ function createApprovalWindow(): void {
     fullscreenable: false,
     minimizable: false,
     maximizable: false,
-    title: 'Vesta Approval',
+    title: 'LongWall Approval',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       // 安全边界：Renderer 不获得任意 Node 权限。
@@ -131,7 +131,7 @@ function createWindow(): void {
     height: 860,
     minWidth: 1100,
     minHeight: 640,
-    title: 'Vesta',
+    title: 'LongWall',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       // 安全边界：Renderer 不获得任意 Node 权限。
@@ -178,13 +178,13 @@ function isHttpUrl(value: string): boolean {
   }
 }
 
-ipcMain.handle('vesta:open-external', async (_event, url: unknown) => {
+ipcMain.handle('longwall:open-external', async (_event, url: unknown) => {
   if (typeof url !== 'string' || !isHttpUrl(url)) return false
   await shell.openExternal(url)
   return true
 })
 
-ipcMain.on('vesta:notify', (_event, payload: unknown) => {
+ipcMain.on('longwall:notify', (_event, payload: unknown) => {
   if (!payload || typeof payload !== 'object' || !Notification.isSupported()) return
   const value = payload as Partial<NotificationPayload>
   if (
@@ -202,12 +202,12 @@ ipcMain.on('vesta:notify', (_event, payload: unknown) => {
   notification.show()
 })
 
-ipcMain.on('vesta:approval-set-visible', (_event, visible: unknown) => {
+ipcMain.on('longwall:approval-set-visible', (_event, visible: unknown) => {
   if (visible !== true && visible !== false) return
   setApprovalVisible(visible)
 })
 
-ipcMain.on('vesta:approval-set-size', (_event, height: unknown) => {
+ipcMain.on('longwall:approval-set-size', (_event, height: unknown) => {
   if (approvalWindow === null || approvalWindow.isDestroyed()) return
   if (typeof height !== 'number' || !Number.isFinite(height)) return
   const clamped = Math.min(

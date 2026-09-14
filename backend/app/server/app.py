@@ -1,4 +1,4 @@
-"""Vesta Host 的本地 transport。
+"""LongWall Host 的本地 transport。
 
 FastAPI 不是业务架构，只负责：
 
@@ -35,7 +35,7 @@ from .rpc import (
 )
 from .version import __version__
 
-logger = logging.getLogger("vesta.server")
+logger = logging.getLogger("longwall.server")
 
 # 只允许 loopback client 读取截图（防止 --host 0.0.0.0 后把桌面截图暴露出去）。
 _ALLOWED_LOOPBACK_HOSTS = frozenset({"127.0.0.1", "::1", "localhost"})
@@ -134,7 +134,7 @@ def create_app(
     *,
     restart_callback: Callable[[], None] | None = None,
 ) -> FastAPI:
-    """构造 Vesta Host 应用。
+    """构造 LongWall Host 应用。
 
     ``application`` 为 None 时自动用默认配置创建（provider 从 .env 选择）。
     调用方也可传入已配置的 Application（例如测试注入离线 fake registry）。
@@ -168,7 +168,7 @@ def create_app(
         if artifact_service is not None:
             artifact_service.set_broadcaster(hub.broadcast)
         logger.info(
-            "Vesta Host started · provider=%s · model=%s",
+            "LongWall Host started · provider=%s · model=%s",
             application.provider,
             application.model,
         )
@@ -176,10 +176,10 @@ def create_app(
             yield
         finally:
             await application.close()
-            logger.info("Vesta Host stopped")
+            logger.info("LongWall Host stopped")
 
     app = FastAPI(
-        title="Vesta Host",
+        title="LongWall Host",
         version=__version__,
         lifespan=lifespan,
     )

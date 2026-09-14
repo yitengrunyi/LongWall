@@ -27,7 +27,7 @@ import aiosqlite
 from .embedding import EmbeddingAdapter
 from .models import MemoryRecord, MemoryStatus
 
-logger = logging.getLogger("vesta.memory.search_index")
+logger = logging.getLogger("longwall.memory.search_index")
 
 DEFAULT_SEARCH_DATABASE_NAME = "search.sqlite"
 _SCHEMA_VERSION = 2

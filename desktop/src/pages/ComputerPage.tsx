@@ -40,7 +40,7 @@ export function ComputerSessionOverview({
           <h2>{available ? '电脑操作已就绪' : '电脑操作不可用'}</h2>
           <p>
             {available
-              ? 'Vesta 当前没有控制任何应用。'
+              ? 'LongWall 当前没有控制任何应用。'
               : 'macOS 电脑操作运行时当前不可用。'}
           </p>
         </div>

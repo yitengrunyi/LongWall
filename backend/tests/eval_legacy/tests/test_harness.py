@@ -128,7 +128,7 @@ async def test_eval02_read_file_tool_works(
                     ),
                 )
             ),
-            model_response(content="文件内容是：Vesta 是一个本地智能助手。"),
+            model_response(content="文件内容是：LongWall 是一个本地智能助手。"),
         ],
     )
     assert passed is True
@@ -472,7 +472,7 @@ async def test_metrics_render_report(
         metric_from_outcome(scenario, outcome, checks, passed)
     )
     text = render_report(report)
-    assert "Vesta Eval Report" in text
+    assert "LongWall Eval Report" in text
     assert "样本通过率" in text
     assert "唯一场景数" in text
     assert scenario.id in text

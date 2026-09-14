@@ -95,7 +95,7 @@ async def test_trace_handler_does_not_persist_text_deltas(tmp_path) -> None:
 
 @pytest.mark.asyncio
 async def test_trace_survives_restart_and_restores_complete_events(tmp_path) -> None:
-    database_path = tmp_path / "vesta.db"
+    database_path = tmp_path / "longwall.db"
     store = SQLiteTraceStore(database_path)
     await store.initialize()
     events = _trace_events()
@@ -121,7 +121,7 @@ async def test_trace_survives_restart_and_restores_complete_events(tmp_path) -> 
 async def test_trace_recording_is_idempotent_and_does_not_regress_status(
     tmp_path,
 ) -> None:
-    store = SQLiteTraceStore(tmp_path / "vesta.db")
+    store = SQLiteTraceStore(tmp_path / "longwall.db")
     await store.initialize()
     events = _trace_events()
     for event in events:
@@ -140,7 +140,7 @@ async def test_trace_recording_is_idempotent_and_does_not_regress_status(
 async def test_memory_post_run_events_do_not_overwrite_main_model_or_usage(
     tmp_path,
 ) -> None:
-    store = SQLiteTraceStore(tmp_path / "vesta.db")
+    store = SQLiteTraceStore(tmp_path / "longwall.db")
     await store.initialize()
     started_at = datetime(2026, 8, 11, 10, 0, tzinfo=UTC)
     await store.record_event(
@@ -215,7 +215,7 @@ async def test_memory_post_run_events_do_not_overwrite_main_model_or_usage(
 
 @pytest.mark.asyncio
 async def test_trace_delete_removes_run_and_events(tmp_path) -> None:
-    store = SQLiteTraceStore(tmp_path / "vesta.db")
+    store = SQLiteTraceStore(tmp_path / "longwall.db")
     await store.initialize()
     for event in _trace_events():
         await store.record_event(event)
@@ -229,7 +229,7 @@ async def test_trace_delete_removes_run_and_events(tmp_path) -> None:
 
 @pytest.mark.asyncio
 async def test_failed_event_marks_trace_as_failed(tmp_path) -> None:
-    store = SQLiteTraceStore(tmp_path / "vesta.db")
+    store = SQLiteTraceStore(tmp_path / "longwall.db")
     await store.initialize()
     final_message = Message(role=MessageRole.ASSISTANT, content="模型调用失败")
     error = AgentError(type="ModelInvocationError", message="连接失败")
@@ -265,7 +265,7 @@ async def test_failed_event_marks_trace_as_failed(tmp_path) -> None:
 async def test_cancelled_event_marks_trace_as_cancelled(tmp_path) -> None:
     """AGENT_CANCELLED 终态：Trace 状态与 RunStore 的 cancelled 保持一致。"""
 
-    store = SQLiteTraceStore(tmp_path / "vesta.db")
+    store = SQLiteTraceStore(tmp_path / "longwall.db")
     await store.initialize()
     cancelled_message = Message(role=MessageRole.ASSISTANT, content="已取消")
     result = AgentResult(
@@ -299,7 +299,7 @@ async def test_failed_event_with_interrupted_reason_marks_interrupted(
 ) -> None:
     """AGENT_FAILED + stop_reason=interrupted：Trace 记为 interrupted。"""
 
-    store = SQLiteTraceStore(tmp_path / "vesta.db")
+    store = SQLiteTraceStore(tmp_path / "longwall.db")
     await store.initialize()
     interrupted_message = Message(role=MessageRole.ASSISTANT, content="已中断")
     result = AgentResult(
@@ -330,7 +330,7 @@ async def test_failed_event_with_interrupted_reason_marks_interrupted(
 async def test_next_sequence_allocates_after_persisted_events(tmp_path) -> None:
     """next_sequence 从已持久化最大序号继续：补发终态不撞 UNIQUE 约束。"""
 
-    store = SQLiteTraceStore(tmp_path / "vesta.db")
+    store = SQLiteTraceStore(tmp_path / "longwall.db")
     await store.initialize()
 
     # 无事件的新 Run：序号从 0 开始。

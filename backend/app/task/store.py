@@ -29,9 +29,9 @@ from .models import (
     TaskStepStatus,
 )
 
-DEFAULT_TASKS_DIR = Path(__file__).resolve().parents[2] / ".vesta" / "tasks"
+DEFAULT_TASKS_DIR = Path(__file__).resolve().parents[2] / ".longwall" / "tasks"
 MAX_TASK_FILE_BYTES = 1_000_000
-logger = logging.getLogger("vesta.task.store")
+logger = logging.getLogger("longwall.task.store")
 
 _TERMINAL_STATUSES = frozenset(
     {TaskStatus.COMPLETED, TaskStatus.FAILED, TaskStatus.CANCELLED}

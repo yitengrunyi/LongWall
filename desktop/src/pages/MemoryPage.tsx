@@ -141,7 +141,7 @@ export default function MemoryPage(): React.JSX.Element {
   return (
     <PageShell
       title="长期记忆"
-      subtitle="查看 Vesta 跨会话保留的稳定信息。"
+      subtitle="查看 LongWall 跨会话保留的稳定信息。"
       maxWidth={1360}
       actions={
         <div className="segmented-control" aria-label="记忆筛选">

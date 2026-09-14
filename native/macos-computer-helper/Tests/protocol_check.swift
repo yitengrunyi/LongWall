@@ -251,7 +251,7 @@ do {
     let missingApp = try request([
         "id": 22,
         "method": "open_app",
-        "params": ["app": "VestaDefinitelyMissingApp_9f3a2b", "session_id": "sess-check"],
+        "params": ["app": "LongWallDefinitelyMissingApp_9f3a2b", "session_id": "sess-check"],
     ])
     check(
         "open_app 不存在 → app_not_found",
@@ -627,8 +627,8 @@ do {
     let tLogic = typeLogic["result"] as? [String: Any]
     let tChars = tLogic?["characters"] as? [String: Any]
     check("chars empty == 0", tChars?["empty"] as? Int == 0)
-    check("chars Hello Vesta == 11", tChars?["hello"] as? Int == 11)
-    check("chars 你好 Vesta == 8", tChars?["cn"] as? Int == 8)
+    check("chars Hello LongWall == 14", tChars?["hello"] as? Int == 14)
+    check("chars 你好 LongWall == 11", tChars?["cn"] as? Int == 11)
     let tChunks = tLogic?["chunks"] as? [String: Any]
     check("chunks empty == 0", tChunks?["empty"] as? Int == 0)
     check("chunks short == 1", tChunks?["short"] as? Int == 1)

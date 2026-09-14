@@ -30,7 +30,7 @@ describe('ExtensionsSettings forms', () => {
     )
     expect(html).toContain('每行一个')
     expect(html).toContain('mcp.json 预览')
-    expect(html).toContain('重启 Vesta Host')
+    expect(html).toContain('重启 LongWall Host')
   })
 
   it('统一导入入口强调先预览且不会执行粘贴命令', () => {

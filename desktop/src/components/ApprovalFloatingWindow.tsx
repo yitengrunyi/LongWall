@@ -2,7 +2,7 @@
 
 只处理 ``desktop`` 审批（ui_scope === 'desktop'）。审批一旦进入浮窗，
 不会因主窗口焦点变化迁移到 Chat；批准后继续展示动作和 Run 状态。
-可见性/尺寸通过 ``window.vesta`` 通知 Electron Main
+可见性/尺寸通过 ``window.longwall`` 通知 Electron Main
 （只有 Main 能 show/hide/resize BrowserWindow）。
 */
 
@@ -24,7 +24,7 @@ export default function ApprovalFloatingWindow(): React.JSX.Element | null {
   const shouldShow = active !== null && floatingApprovalShouldBeVisible(phase)
 
   useEffect(() => {
-    window.vesta?.setApprovalVisible?.(shouldShow)
+    window.longwall?.setApprovalVisible?.(shouldShow)
   }, [shouldShow])
 
   // 成功/拒绝短暂停留，Run 失败多留一会；下一项审批由 dismiss 自动接棒。
@@ -42,7 +42,7 @@ export default function ApprovalFloatingWindow(): React.JSX.Element | null {
     if (!element) return
     const sync = (): void => {
       const height = Math.ceil(element.scrollHeight)
-      window.vesta?.setApprovalSize?.(height)
+      window.longwall?.setApprovalSize?.(height)
     }
     sync()
     const observer = new ResizeObserver(sync)

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { Conversation } from '../api/types'
 import { Icon } from './Icon'
 
-const PINNED_KEY = 'vesta.pinnedConversations'
+const PINNED_KEY = 'longwall.pinnedConversations'
 
 function loadPinned(): string[] {
   try {

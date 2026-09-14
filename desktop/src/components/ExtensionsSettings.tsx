@@ -93,7 +93,7 @@ export default function ExtensionsSettings(): React.JSX.Element {
       <header className="extensions-header">
         <div>
           <span className="extensions-header__eyebrow">Extensions</span>
-          <h2>扩展 Vesta 的工作能力</h2>
+          <h2>扩展 LongWall 的工作能力</h2>
           <p>Skill 提供可复用方法，MCP Server 提供外部工具。安装操作由 Host 校验并写入。</p>
         </div>
         <div className="extensions-header__actions">
@@ -255,7 +255,7 @@ export function UnifiedImportForm({
       {plan ? <ImportPlanPreview plan={plan} /> : (
         <div className="extension-import__empty">
           <strong>先生成安全预览</strong>
-          <span>Vesta 会识别 Skill 安装命令与 MCP Server，并展示实际动作。</span>
+          <span>LongWall 会识别 Skill 安装命令与 MCP Server，并展示实际动作。</span>
         </div>
       )}
       {error ? <div className="error-text extension-form__error">{error instanceof Error ? error.message : String(error)}</div> : null}
@@ -291,7 +291,7 @@ function ImportPlanPreview({ plan }: { plan: ExtensionImportPlan }): React.JSX.E
         <span>确认后执行</span>
         <ol>{plan.actions.map((action, index) => <li key={`${index}:${action}`}>{action}</li>)}</ol>
         {plan.warnings.map((warning) => <p className="extension-import__warning" key={warning}>{warning}</p>)}
-        {plan.requires_restart ? <p className="extension-import__restart">MCP 只写入配置，重启 Vesta Host 后才会启动。</p> : null}
+        {plan.requires_restart ? <p className="extension-import__restart">MCP 只写入配置，重启 LongWall Host 后才会启动。</p> : null}
       </div>
     </div>
   )
@@ -313,7 +313,7 @@ function SkillList({
   return (
     <div className="extension-list-wrap">
       {skills.length === 0 ? (
-        <EmptyState title="尚未安装 Skill" hint="添加一个方法包，让 Vesta 在相关任务中按需激活。" icon="memory" />
+        <EmptyState title="尚未安装 Skill" hint="添加一个方法包，让 LongWall 在相关任务中按需激活。" icon="memory" />
       ) : (
         <div className="extension-list">
           {skills.map((skill) => (
@@ -363,7 +363,7 @@ function MCPList({
     <div className="extension-list-wrap">
       <div className="mcp-config-note">
         <div><strong>配置文件</strong><span className="mono">{configPath || '尚未创建'}</span></div>
-        <p>{restartRequired ? '配置已有变更等待应用，请重启 Vesta Host。' : '新增 Server 会生成标准 JSON；保存后重启 Vesta Host 才会连接并注册工具。'}</p>
+        <p>{restartRequired ? '配置已有变更等待应用，请重启 LongWall Host。' : '新增 Server 会生成标准 JSON；保存后重启 LongWall Host 才会连接并注册工具。'}</p>
       </div>
       {restartRequired ? <div className="extension-restart-notice">MCP 配置与当前运行进程不同步，重启 Host 前旧连接与工具仍可能继续存在。</div> : null}
       {configError ? <div className="error-text extension-error">{configError}</div> : null}
@@ -502,7 +502,7 @@ export function MCPInstallForm({
       </div>
       <div className="extension-form__preview"><span>mcp.json 预览</span><pre>{JSON.stringify(preview, null, 2)}</pre></div>
       {(error || serverError) ? <div className="error-text extension-form__error">{error ?? String(serverError)}</div> : null}
-      <div className="extension-form__notice">保存只写配置，不会在当前进程中执行命令。重启 Vesta Host 后连接生效。</div>
+      <div className="extension-form__notice">保存只写配置，不会在当前进程中执行命令。重启 LongWall Host 后连接生效。</div>
       <div className="extension-form__actions"><button className="btn btn-primary" disabled={busy} onClick={() => void submit()}>{busy ? '正在保存…' : '保存 MCP 配置'}</button><button className="btn" onClick={onCancel}>取消</button></div>
     </section>
   )

@@ -190,7 +190,7 @@ func desktopStateIsFresh(
 
 /// 把本次 Observation 记录的“已批准目标”App/Window 恢复到前台，并确认仍是该目标。
 ///
-/// 场景：computer_type / click / key 需要人工审批，Vesta 审批 UI 会抢走 macOS
+/// 场景：computer_type / click / key 需要人工审批，LongWall 审批 UI 会抢走 macOS
 /// 焦点；批准后执行前先把之前观察到的 App/Window 恢复到前台，再重新验证仍是
 /// 同一个目标。确认不了（App 已退出 / 窗口已关闭 / 无法恢复）返回 false，
 /// 调用方按 stale 安全失败，绝不盲目操作。

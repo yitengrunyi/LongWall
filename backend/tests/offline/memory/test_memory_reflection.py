@@ -249,7 +249,7 @@ async def test_reflection_create_uses_manager_and_rebuilds_index(
     manager = await _manager(tmp_path / "memory")
     decision = (
         '{"action":"create","title":"Memory 架构决定",'
-        '"summary":"Vesta 使用 Markdown Memory 与运行后反思",'
+        '"summary":"LongWall 使用 Markdown Memory 与运行后反思",'
         '"content":"普通长期记忆由 Post-Run Reflector 沉淀。",'
         '"reason":"这是跨会话仍有价值的架构决定"}'
     )
@@ -280,7 +280,7 @@ async def test_reflection_create_uses_manager_and_rebuilds_index(
     record = await manager.store.load("M001")
     assert record is not None
     assert "Post-Run Reflector" in record.content
-    assert "Vesta 使用 Markdown Memory" in (
+    assert "LongWall 使用 Markdown Memory" in (
         await manager.index.load() or ""
     )
 
@@ -562,7 +562,7 @@ async def test_runtime_successful_memory_read_authorizes_reflection_update(
     manager = await _manager(tmp_path / "memory")
     record = await manager.create(
         title="项目方向",
-        summary="Vesta 的长期记忆方向",
+        summary="LongWall 的长期记忆方向",
         content="旧方向",
     )
     (manager.memory_dir / "INDEX.md").write_text("stale", encoding="utf-8")

@@ -1,4 +1,4 @@
-"""允许通过 ``python -m app`` 启动 Vesta CLI。"""
+"""允许通过 ``python -m app`` 启动 LongWall CLI。"""
 
 from __future__ import annotations
 
