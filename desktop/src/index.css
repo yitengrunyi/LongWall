@@ -3003,9 +3003,10 @@ body::before { display: none; }
   background: transparent;
   box-shadow: none;
   color: var(--accent);
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 .nav-item { width: 38px; height: 36px; border-radius: 7px; }
 .nav-item.active { color: var(--accent); background: #dce6e2; }
